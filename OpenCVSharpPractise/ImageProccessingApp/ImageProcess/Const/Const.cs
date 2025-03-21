@@ -11,6 +11,11 @@ namespace ImageProccessingApp
         public const int CntrastLevelMin = 0;
 
         public const int CntrastLevelMax = 50;
+
+
+        public const int CannyThresholdMin = 100;
+
+        public const int CannyThresholdMax = 200;
     }
     public enum ProcessExecuteResult 
     {
@@ -29,10 +34,19 @@ namespace ImageProccessingApp
     public enum ProcessType
     {
         GrayScale,
-        Gauss,
+        Filter,
         Contrast,
         Saturation,
         Brightness,
         NegaPosi,
     }
+
+    public enum FilterType
+    {
+        Gaussian,
+        Median,
+        MovingAverage,
+    }
+
+
 }

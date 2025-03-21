@@ -155,9 +155,9 @@ namespace ImageProccessingApp
             {
                 selectedMethods.Add(ProcessType.GrayScale);
             }
-            if (this.ChkBox_Gauss.Checked)
+            if (this.ChkBox_Filter.Checked)
             {
-                selectedMethods.Add(ProcessType.Gauss);
+                selectedMethods.Add(ProcessType.Filter);
             }
             if (this.ChkBox_Contrast.Checked)
             {
@@ -171,7 +171,10 @@ namespace ImageProccessingApp
             {
                 selectedMethods.Add(ProcessType.NegaPosi);
             }
-
+            if (this.ChkBox_Brightness.Checked)
+            {
+                selectedMethods.Add(ProcessType.Brightness);
+            }
             return selectedMethods;
         }
 
@@ -184,8 +187,13 @@ namespace ImageProccessingApp
                 switch (process)
                 {
                     // 画面設定値を設定
-                    case ProcessType.Gauss:
-                        setting.GaussianKernel = this.ScBar_Gauss.Value;
+                    case ProcessType.Filter:
+                        // カーネルサイズ-3段階(3,5,7)
+                        setting.Kernel = this.ScBar_Filter.Value　== 1 ? 3:
+                            this.ScBar_Filter.Value == 2 ? 5 : 7;
+                        // フィルタタイプ(ガウシアン/メディアン/移動平均)
+                        setting.FilterType = this.radio_Gauss.Checked ? FilterType.Gaussian : 
+                            this.radio_Median.Checked ? FilterType.Median : FilterType.MovingAverage;
                         break;
                     case ProcessType.Contrast:
                         setting.ContrastLevel = this.ScBar_Contrast.Value;

@@ -39,19 +39,24 @@
             ScBar_Saturation = new HScrollBar();
             Btn_ProcessImage = new Button();
             Btn_Clear = new Button();
-            ChkBox_Gauss = new CheckBox();
-            ScBar_Gauss = new HScrollBar();
+            ChkBox_Filter = new CheckBox();
+            ScBar_Filter = new HScrollBar();
             ScBar_Brightness = new HScrollBar();
             ChkBox_Brightness = new CheckBox();
             ChkBox_NegaPosi = new CheckBox();
+            panel1 = new Panel();
+            radio_MovingAverage = new RadioButton();
+            radio_Median = new RadioButton();
+            radio_Gauss = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)PicBox_SelectedImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PicBox_ProcessedImage).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // PicBox_SelectedImage
             // 
             PicBox_SelectedImage.BorderStyle = BorderStyle.FixedSingle;
-            PicBox_SelectedImage.Location = new Point(33, 73);
+            PicBox_SelectedImage.Location = new Point(33, 12);
             PicBox_SelectedImage.Name = "PicBox_SelectedImage";
             PicBox_SelectedImage.Size = new Size(340, 340);
             PicBox_SelectedImage.TabIndex = 0;
@@ -60,7 +65,7 @@
             // PicBox_ProcessedImage
             // 
             PicBox_ProcessedImage.BorderStyle = BorderStyle.FixedSingle;
-            PicBox_ProcessedImage.Location = new Point(399, 73);
+            PicBox_ProcessedImage.Location = new Point(399, 12);
             PicBox_ProcessedImage.Name = "PicBox_ProcessedImage";
             PicBox_ProcessedImage.Size = new Size(340, 340);
             PicBox_ProcessedImage.TabIndex = 1;
@@ -69,7 +74,7 @@
             // Btn_SelectImage
             // 
             Btn_SelectImage.BackColor = SystemColors.ButtonShadow;
-            Btn_SelectImage.Location = new Point(33, 419);
+            Btn_SelectImage.Location = new Point(33, 358);
             Btn_SelectImage.Name = "Btn_SelectImage";
             Btn_SelectImage.Size = new Size(109, 36);
             Btn_SelectImage.TabIndex = 2;
@@ -81,7 +86,7 @@
             // 
             btn_Save.AccessibleRole = AccessibleRole.None;
             btn_Save.BackColor = SystemColors.ButtonShadow;
-            btn_Save.Location = new Point(399, 419);
+            btn_Save.Location = new Point(399, 358);
             btn_Save.Name = "btn_Save";
             btn_Save.Size = new Size(109, 36);
             btn_Save.TabIndex = 3;
@@ -92,7 +97,7 @@
             // ChkBox_Contrast
             // 
             ChkBox_Contrast.AutoSize = true;
-            ChkBox_Contrast.Location = new Point(33, 563);
+            ChkBox_Contrast.Location = new Point(33, 545);
             ChkBox_Contrast.Name = "ChkBox_Contrast";
             ChkBox_Contrast.Size = new Size(70, 19);
             ChkBox_Contrast.TabIndex = 4;
@@ -102,7 +107,7 @@
             // ChkBox_GrayScale
             // 
             ChkBox_GrayScale.AutoSize = true;
-            ChkBox_GrayScale.Location = new Point(33, 487);
+            ChkBox_GrayScale.Location = new Point(33, 426);
             ChkBox_GrayScale.Name = "ChkBox_GrayScale";
             ChkBox_GrayScale.Size = new Size(77, 19);
             ChkBox_GrayScale.TabIndex = 5;
@@ -112,7 +117,7 @@
             // ChkBox_Saturation
             // 
             ChkBox_Saturation.AutoSize = true;
-            ChkBox_Saturation.Location = new Point(33, 649);
+            ChkBox_Saturation.Location = new Point(33, 631);
             ChkBox_Saturation.Name = "ChkBox_Saturation";
             ChkBox_Saturation.Size = new Size(80, 19);
             ChkBox_Saturation.TabIndex = 6;
@@ -122,29 +127,29 @@
             // ScBar_Contrast
             // 
             ScBar_Contrast.LargeChange = 5;
-            ScBar_Contrast.Location = new Point(151, 563);
+            ScBar_Contrast.Location = new Point(151, 545);
             ScBar_Contrast.Maximum = 50;
             ScBar_Contrast.Minimum = 1;
             ScBar_Contrast.Name = "ScBar_Contrast";
-            ScBar_Contrast.Size = new Size(357, 19);
+            ScBar_Contrast.Size = new Size(357, 22);
             ScBar_Contrast.TabIndex = 7;
             ScBar_Contrast.Value = 25;
             // 
             // ScBar_Saturation
             // 
             ScBar_Saturation.LargeChange = 5;
-            ScBar_Saturation.Location = new Point(151, 649);
+            ScBar_Saturation.Location = new Point(151, 631);
             ScBar_Saturation.Maximum = 50;
             ScBar_Saturation.Minimum = 1;
             ScBar_Saturation.Name = "ScBar_Saturation";
-            ScBar_Saturation.Size = new Size(357, 19);
+            ScBar_Saturation.Size = new Size(357, 22);
             ScBar_Saturation.TabIndex = 9;
             ScBar_Saturation.Value = 25;
             // 
             // Btn_ProcessImage
             // 
             Btn_ProcessImage.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            Btn_ProcessImage.Location = new Point(578, 563);
+            Btn_ProcessImage.Location = new Point(609, 607);
             Btn_ProcessImage.Name = "Btn_ProcessImage";
             Btn_ProcessImage.Size = new Size(130, 61);
             Btn_ProcessImage.TabIndex = 10;
@@ -155,7 +160,7 @@
             // Btn_Clear
             // 
             Btn_Clear.BackColor = SystemColors.ButtonShadow;
-            Btn_Clear.Location = new Point(264, 419);
+            Btn_Clear.Location = new Point(264, 358);
             Btn_Clear.Name = "Btn_Clear";
             Btn_Clear.Size = new Size(109, 36);
             Btn_Clear.TabIndex = 11;
@@ -163,42 +168,42 @@
             Btn_Clear.UseVisualStyleBackColor = false;
             Btn_Clear.Click += Btn_Clear_Click;
             // 
-            // ChkBox_Gauss
+            // ChkBox_Filter
             // 
-            ChkBox_Gauss.AutoSize = true;
-            ChkBox_Gauss.Location = new Point(33, 522);
-            ChkBox_Gauss.Name = "ChkBox_Gauss";
-            ChkBox_Gauss.Size = new Size(57, 19);
-            ChkBox_Gauss.TabIndex = 12;
-            ChkBox_Gauss.Text = "Gauss";
-            ChkBox_Gauss.UseVisualStyleBackColor = true;
+            ChkBox_Filter.AutoSize = true;
+            ChkBox_Filter.Location = new Point(33, 461);
+            ChkBox_Filter.Name = "ChkBox_Filter";
+            ChkBox_Filter.Size = new Size(52, 19);
+            ChkBox_Filter.TabIndex = 12;
+            ChkBox_Filter.Text = "Filter";
+            ChkBox_Filter.UseVisualStyleBackColor = true;
             // 
-            // ScBar_Gauss
+            // ScBar_Filter
             // 
-            ScBar_Gauss.LargeChange = 1;
-            ScBar_Gauss.Location = new Point(151, 522);
-            ScBar_Gauss.Maximum = 10;
-            ScBar_Gauss.Minimum = 1;
-            ScBar_Gauss.Name = "ScBar_Gauss";
-            ScBar_Gauss.Size = new Size(357, 19);
-            ScBar_Gauss.TabIndex = 13;
-            ScBar_Gauss.Value = 6;
+            ScBar_Filter.LargeChange = 1;
+            ScBar_Filter.Location = new Point(151, 461);
+            ScBar_Filter.Maximum = 3;
+            ScBar_Filter.Minimum = 1;
+            ScBar_Filter.Name = "ScBar_Filter";
+            ScBar_Filter.Size = new Size(152, 19);
+            ScBar_Filter.TabIndex = 13;
+            ScBar_Filter.Value = 2;
             // 
             // ScBar_Brightness
             // 
             ScBar_Brightness.LargeChange = 5;
-            ScBar_Brightness.Location = new Point(151, 605);
+            ScBar_Brightness.Location = new Point(151, 587);
             ScBar_Brightness.Maximum = 50;
             ScBar_Brightness.Minimum = 1;
             ScBar_Brightness.Name = "ScBar_Brightness";
-            ScBar_Brightness.Size = new Size(357, 19);
+            ScBar_Brightness.Size = new Size(357, 22);
             ScBar_Brightness.TabIndex = 15;
             ScBar_Brightness.Value = 25;
             // 
             // ChkBox_Brightness
             // 
             ChkBox_Brightness.AutoSize = true;
-            ChkBox_Brightness.Location = new Point(33, 605);
+            ChkBox_Brightness.Location = new Point(33, 587);
             ChkBox_Brightness.Name = "ChkBox_Brightness";
             ChkBox_Brightness.Size = new Size(81, 19);
             ChkBox_Brightness.TabIndex = 14;
@@ -208,23 +213,71 @@
             // ChkBox_NegaPosi
             // 
             ChkBox_NegaPosi.AutoSize = true;
-            ChkBox_NegaPosi.Location = new Point(151, 487);
+            ChkBox_NegaPosi.Location = new Point(151, 426);
             ChkBox_NegaPosi.Name = "ChkBox_NegaPosi";
             ChkBox_NegaPosi.Size = new Size(76, 19);
             ChkBox_NegaPosi.TabIndex = 16;
             ChkBox_NegaPosi.Text = "NegaPosi";
             ChkBox_NegaPosi.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(radio_MovingAverage);
+            panel1.Controls.Add(radio_Median);
+            panel1.Controls.Add(radio_Gauss);
+            panel1.Location = new Point(44, 480);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(125, 56);
+            panel1.TabIndex = 17;
+            // 
+            // radio_MovingAverage
+            // 
+            radio_MovingAverage.AutoSize = true;
+            radio_MovingAverage.Font = new Font("Yu Gothic UI", 8F);
+            radio_MovingAverage.Location = new Point(3, 36);
+            radio_MovingAverage.Name = "radio_MovingAverage";
+            radio_MovingAverage.Size = new Size(101, 17);
+            radio_MovingAverage.TabIndex = 2;
+            radio_MovingAverage.TabStop = true;
+            radio_MovingAverage.Text = "MovingAverage";
+            radio_MovingAverage.UseVisualStyleBackColor = true;
+            // 
+            // radio_Median
+            // 
+            radio_Median.AutoSize = true;
+            radio_Median.Font = new Font("Yu Gothic UI", 8F);
+            radio_Median.Location = new Point(3, 19);
+            radio_Median.Name = "radio_Median";
+            radio_Median.Size = new Size(62, 17);
+            radio_Median.TabIndex = 1;
+            radio_Median.TabStop = true;
+            radio_Median.Text = "Median";
+            radio_Median.UseVisualStyleBackColor = true;
+            // 
+            // radio_Gauss
+            // 
+            radio_Gauss.AutoSize = true;
+            radio_Gauss.Font = new Font("Yu Gothic UI", 8F);
+            radio_Gauss.Location = new Point(3, 3);
+            radio_Gauss.Name = "radio_Gauss";
+            radio_Gauss.Size = new Size(55, 17);
+            radio_Gauss.TabIndex = 0;
+            radio_Gauss.TabStop = true;
+            radio_Gauss.Text = "Gauss";
+            radio_Gauss.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(849, 736);
+            ClientSize = new Size(849, 739);
+            Controls.Add(panel1);
             Controls.Add(ChkBox_NegaPosi);
             Controls.Add(ScBar_Brightness);
             Controls.Add(ChkBox_Brightness);
-            Controls.Add(ScBar_Gauss);
-            Controls.Add(ChkBox_Gauss);
+            Controls.Add(ScBar_Filter);
+            Controls.Add(ChkBox_Filter);
             Controls.Add(Btn_Clear);
             Controls.Add(Btn_ProcessImage);
             Controls.Add(ScBar_Saturation);
@@ -240,6 +293,8 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)PicBox_SelectedImage).EndInit();
             ((System.ComponentModel.ISupportInitialize)PicBox_ProcessedImage).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -257,10 +312,14 @@
         private HScrollBar ScBar_Saturation;
         private Button Btn_ProcessImage;
         private Button Btn_Clear;
-        private CheckBox ChkBox_Gauss;
-        private HScrollBar ScBar_Gauss;
+        private CheckBox ChkBox_Filter;
+        private HScrollBar ScBar_Filter;
         private HScrollBar ScBar_Brightness;
         private CheckBox ChkBox_Brightness;
         private CheckBox ChkBox_NegaPosi;
+        private Panel panel1;
+        private RadioButton radio_MovingAverage;
+        private RadioButton radio_Median;
+        private RadioButton radio_Gauss;
     }
 }

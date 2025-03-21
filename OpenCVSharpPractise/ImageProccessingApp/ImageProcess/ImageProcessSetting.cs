@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ImageProccessingApp.ImageProcess
+﻿namespace ImageProccessingApp.ImageProcess
 {
     public class ImageProcessSetting
     {
@@ -26,9 +20,12 @@ namespace ImageProccessingApp.ImageProcess
 
 
         /// <summary>
-        /// ガウス処理設定値
+        /// フィルタ処理設定値
         /// </summary>
-        public int GaussianKernel { get; set; } = 3;
+        public int Kernel { get; set; } = 3;
+
+        public FilterType FilterType { get; set; }
+
 
     }
 }
