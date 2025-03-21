@@ -1,4 +1,5 @@
 using System.Net.NetworkInformation;
+using ImageProccessingApp.ImageProcess;
 using OpenCvSharp;
 
 
@@ -26,12 +27,11 @@ namespace ImageProccessingApp
             }
         }
 
-
         /// <summary>
         /// 処理済み画像
         /// </summary>
-        private Image processedImage;
-        Image ProcessedImage
+        private Bitmap processedImage;
+        Bitmap ProcessedImage
         {
             get { return processedImage; }
             set
@@ -55,7 +55,7 @@ namespace ImageProccessingApp
             if (!string.IsNullOrEmpty(selectFilepath))
             {
                 // 選択ファイルを表示
-                this.SelectedImage = new Bitmap (selectFilepath);
+                this.SelectedImage = new Bitmap(selectFilepath);
             }
             else
             {
@@ -70,14 +70,14 @@ namespace ImageProccessingApp
         /// <param name="e">イベント情報</param>
         private void Btn_Clear_Click(object sender, EventArgs e)
         {
-            if(this.SelectedImage != null)
+            if (this.SelectedImage != null)
             {
                 this.SelectedImage.Dispose();
                 this.SelectedImage = null;
             }
             this.PicBox_SelectedImage.Image = null;
 
-            if(this.ProcessedImage != null)
+            if (this.ProcessedImage != null)
             {
                 this.ProcessedImage.Dispose();
                 this.ProcessedImage = null;
@@ -89,36 +89,124 @@ namespace ImageProccessingApp
         /// <summary>
         /// ProcessImageﾎﾞﾀﾝ押下時処理
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">発行元情報</param>
+        /// <param name="e">イベント情報</param>
         private void Btn_ProcessImage_Click(object sender, EventArgs e)
         {
-            var targetProcesses = this.GetSelectedProcessingMethods();
-            var setting = new ImageProcessSetting(this.ScBar_Contrast.Value, this.ScBar_Saturation.Value,this.ScBar_Gauss.Value*2+1);
+            // 処理対象を取得
+            var targetProcesses = this.GetSelectedProcesses();
+            // 設定取得
+            var setting = this.CreateImageProcessSetting(targetProcesses);
+            // プロセス作成
             var processer = new ImageProcessor(targetProcesses, setting);
-            var processedBitmap = processer.ProcessExecute(SelectedImage);
+            // 画像処理実行
+            var result = processer.ProcessExecute(this.SelectedImage,out Bitmap bitmap);
+            // 全ての処理に成功している場合のみ、処理済み画像エリア更新
+            if(result == ProcessExecuteResult.SUCCESS)
+            {
+                this.ProcessedImage = bitmap;
+            }
+            else
+            {
+                this.ErrorHandling(result);
+                bitmap?.Dispose();
+            }
+        }
 
-            this.ProcessedImage = processedBitmap;
+        /// <summary>
+        ///  処理結果(SUCCESS)以外のハンドリングメソッド
+        /// </summary>
+        /// <param name="errType">処理実行結果</param>
+        private void ErrorHandling(ProcessExecuteResult errType)
+        {
+            switch (errType)
+            {
+                case ProcessExecuteResult.INVALID_PARAMETERS:
+                    MessageBox.Show("選択画像が正しくありません");
+                    break;
+                case ProcessExecuteResult.PROCESSING_ERROR:
+                    MessageBox.Show("処理中にエラーが発生しました");
+                    break;
+                case ProcessExecuteResult.NON_EXECUTEPROCESSES:
+                    MessageBox.Show("実行する処理を選択してください");
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 保存押下時処理
+        /// </summary>
+        /// <param name="sender">発行元情報</param>
+        /// <param name="e">イベント情報</param>
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            ImageFileManager.ImageFileSave(this.ProcessedImage);
         }
 
         /// <summary>
         /// 適用する処理項目取得
         /// </summary>
         /// <returns>適用項目のリスト</returns>
-        private IEnumerable<Processing> GetSelectedProcessingMethods()
+        private IEnumerable<ProcessType> GetSelectedProcesses()
         {
-            var selectedMethods = new List<Processing>();
-            
+            var selectedMethods = new List<ProcessType>();
+
             if (this.ChkBox_GrayScale.Checked)
             {
-                selectedMethods.Add(Processing.Gray);
+                selectedMethods.Add(ProcessType.GrayScale);
             }
             if (this.ChkBox_Gauss.Checked)
             {
-                selectedMethods.Add(Processing.Gauss);
+                selectedMethods.Add(ProcessType.Gauss);
+            }
+            if (this.ChkBox_Contrast.Checked)
+            {
+                selectedMethods.Add(ProcessType.Contrast);
+            }
+            if (this.ChkBox_Saturation.Checked)
+            {
+                selectedMethods.Add(ProcessType.Saturation);
+            }
+            if (this.ChkBox_NegaPosi.Checked)
+            {
+                selectedMethods.Add(ProcessType.NegaPosi);
             }
 
             return selectedMethods;
+        }
+
+        private ImageProcessSetting CreateImageProcessSetting(IEnumerable<ProcessType> processes)
+        {
+            var setting = new ImageProcessSetting();
+
+            foreach (var process in processes)
+            {
+                switch (process)
+                {
+                    // 画面設定値を設定
+                    case ProcessType.Gauss:
+                        setting.GaussianKernel = this.ScBar_Gauss.Value;
+                        break;
+                    case ProcessType.Contrast:
+                        setting.ContrastLevel = this.ScBar_Contrast.Value;
+                        break;
+                    case ProcessType.Saturation:
+                        setting.SaturationLevel = this.ScBar_Saturation.Value;
+                        break;
+                    case ProcessType.Brightness:
+                        setting.BrightnessLevel = this.ScBar_Brightness.Value;
+                        break;
+
+                    // 画面設定値が不要な処理
+                    case ProcessType.GrayScale:
+                    case ProcessType.NegaPosi:
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return setting;
         }
     }
 }

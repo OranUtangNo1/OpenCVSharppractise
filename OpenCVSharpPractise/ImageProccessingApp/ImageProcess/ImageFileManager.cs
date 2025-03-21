@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ImageProccessingApp
 {
@@ -41,6 +42,24 @@ namespace ImageProccessingApp
             }
 
             return filePath;
+        }
+
+        public static bool ImageFileSave(Bitmap saveImage)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = CreateFileFilter(new FileFilter[] { FileFilter.bmp });
+            saveFileDialog.CheckFileExists = true;
+            saveFileDialog.CheckPathExists = true;
+            var result = saveFileDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                saveImage.Save(saveFileDialog.FileName, System.Drawing.Imaging.ImageFormat.Bmp);
+                return true;
+            }
+            else 
+            { 
+                return false;
+            }
         }
 
         /// <summary>

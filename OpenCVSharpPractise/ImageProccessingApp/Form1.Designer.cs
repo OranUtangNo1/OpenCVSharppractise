@@ -31,7 +31,7 @@
             PicBox_SelectedImage = new PictureBox();
             PicBox_ProcessedImage = new PictureBox();
             Btn_SelectImage = new Button();
-            button2 = new Button();
+            btn_Save = new Button();
             ChkBox_Contrast = new CheckBox();
             ChkBox_GrayScale = new CheckBox();
             ChkBox_Saturation = new CheckBox();
@@ -41,6 +41,9 @@
             Btn_Clear = new Button();
             ChkBox_Gauss = new CheckBox();
             ScBar_Gauss = new HScrollBar();
+            ScBar_Brightness = new HScrollBar();
+            ChkBox_Brightness = new CheckBox();
+            ChkBox_NegaPosi = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)PicBox_SelectedImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PicBox_ProcessedImage).BeginInit();
             SuspendLayout();
@@ -74,15 +77,17 @@
             Btn_SelectImage.UseVisualStyleBackColor = false;
             Btn_SelectImage.Click += Btn_SelectImage_Click;
             // 
-            // button2
+            // btn_Save
             // 
-            button2.BackColor = SystemColors.ButtonShadow;
-            button2.Location = new Point(399, 419);
-            button2.Name = "button2";
-            button2.Size = new Size(109, 36);
-            button2.TabIndex = 3;
-            button2.Text = "Save";
-            button2.UseVisualStyleBackColor = false;
+            btn_Save.AccessibleRole = AccessibleRole.None;
+            btn_Save.BackColor = SystemColors.ButtonShadow;
+            btn_Save.Location = new Point(399, 419);
+            btn_Save.Name = "btn_Save";
+            btn_Save.Size = new Size(109, 36);
+            btn_Save.TabIndex = 3;
+            btn_Save.Text = "Save";
+            btn_Save.UseVisualStyleBackColor = false;
+            btn_Save.Click += btn_Save_Click;
             // 
             // ChkBox_Contrast
             // 
@@ -107,7 +112,7 @@
             // ChkBox_Saturation
             // 
             ChkBox_Saturation.AutoSize = true;
-            ChkBox_Saturation.Location = new Point(33, 605);
+            ChkBox_Saturation.Location = new Point(33, 649);
             ChkBox_Saturation.Name = "ChkBox_Saturation";
             ChkBox_Saturation.Size = new Size(80, 19);
             ChkBox_Saturation.TabIndex = 6;
@@ -119,6 +124,7 @@
             ScBar_Contrast.LargeChange = 5;
             ScBar_Contrast.Location = new Point(151, 563);
             ScBar_Contrast.Maximum = 50;
+            ScBar_Contrast.Minimum = 1;
             ScBar_Contrast.Name = "ScBar_Contrast";
             ScBar_Contrast.Size = new Size(357, 19);
             ScBar_Contrast.TabIndex = 7;
@@ -127,11 +133,13 @@
             // ScBar_Saturation
             // 
             ScBar_Saturation.LargeChange = 5;
-            ScBar_Saturation.Location = new Point(151, 605);
+            ScBar_Saturation.Location = new Point(151, 649);
             ScBar_Saturation.Maximum = 50;
+            ScBar_Saturation.Minimum = 1;
             ScBar_Saturation.Name = "ScBar_Saturation";
             ScBar_Saturation.Size = new Size(357, 19);
             ScBar_Saturation.TabIndex = 9;
+            ScBar_Saturation.Value = 25;
             // 
             // Btn_ProcessImage
             // 
@@ -169,18 +177,52 @@
             // 
             ScBar_Gauss.LargeChange = 1;
             ScBar_Gauss.Location = new Point(151, 522);
-            ScBar_Gauss.Maximum = 5;
+            ScBar_Gauss.Maximum = 10;
             ScBar_Gauss.Minimum = 1;
             ScBar_Gauss.Name = "ScBar_Gauss";
             ScBar_Gauss.Size = new Size(357, 19);
             ScBar_Gauss.TabIndex = 13;
-            ScBar_Gauss.Value = 3;
+            ScBar_Gauss.Value = 6;
+            // 
+            // ScBar_Brightness
+            // 
+            ScBar_Brightness.LargeChange = 5;
+            ScBar_Brightness.Location = new Point(151, 605);
+            ScBar_Brightness.Maximum = 50;
+            ScBar_Brightness.Minimum = 1;
+            ScBar_Brightness.Name = "ScBar_Brightness";
+            ScBar_Brightness.Size = new Size(357, 19);
+            ScBar_Brightness.TabIndex = 15;
+            ScBar_Brightness.Value = 25;
+            // 
+            // ChkBox_Brightness
+            // 
+            ChkBox_Brightness.AutoSize = true;
+            ChkBox_Brightness.Location = new Point(33, 605);
+            ChkBox_Brightness.Name = "ChkBox_Brightness";
+            ChkBox_Brightness.Size = new Size(81, 19);
+            ChkBox_Brightness.TabIndex = 14;
+            ChkBox_Brightness.Text = "Brightness";
+            ChkBox_Brightness.UseVisualStyleBackColor = true;
+            // 
+            // ChkBox_NegaPosi
+            // 
+            ChkBox_NegaPosi.AutoSize = true;
+            ChkBox_NegaPosi.Location = new Point(151, 487);
+            ChkBox_NegaPosi.Name = "ChkBox_NegaPosi";
+            ChkBox_NegaPosi.Size = new Size(76, 19);
+            ChkBox_NegaPosi.TabIndex = 16;
+            ChkBox_NegaPosi.Text = "NegaPosi";
+            ChkBox_NegaPosi.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(764, 672);
+            ClientSize = new Size(849, 736);
+            Controls.Add(ChkBox_NegaPosi);
+            Controls.Add(ScBar_Brightness);
+            Controls.Add(ChkBox_Brightness);
             Controls.Add(ScBar_Gauss);
             Controls.Add(ChkBox_Gauss);
             Controls.Add(Btn_Clear);
@@ -190,7 +232,7 @@
             Controls.Add(ChkBox_Saturation);
             Controls.Add(ChkBox_GrayScale);
             Controls.Add(ChkBox_Contrast);
-            Controls.Add(button2);
+            Controls.Add(btn_Save);
             Controls.Add(Btn_SelectImage);
             Controls.Add(PicBox_ProcessedImage);
             Controls.Add(PicBox_SelectedImage);
@@ -207,7 +249,7 @@
         private PictureBox PicBox_SelectedImage;
         private PictureBox PicBox_ProcessedImage;
         private Button Btn_SelectImage;
-        private Button button2;
+        private Button btn_Save;
         private CheckBox ChkBox_Contrast;
         private CheckBox ChkBox_GrayScale;
         private CheckBox ChkBox_Saturation;
@@ -217,5 +259,8 @@
         private Button Btn_Clear;
         private CheckBox ChkBox_Gauss;
         private HScrollBar ScBar_Gauss;
+        private HScrollBar ScBar_Brightness;
+        private CheckBox ChkBox_Brightness;
+        private CheckBox ChkBox_NegaPosi;
     }
 }

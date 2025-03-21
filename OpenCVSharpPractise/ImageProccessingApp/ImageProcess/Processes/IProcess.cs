@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ImageProccessingApp.ImageProcess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,18 @@ namespace ImageProccessingApp.Processes
     /// </summary>
     public interface IProcess
     {
+
         /// <summary>
-        /// Process
+        /// 画像処理種別
         /// </summary>
-        /// <param name="inputImage">入力画像(bmp)</param>
-        /// <param name="setting">画像処理設定クラス</param>
-        /// <returns>出力画像(bmp)</returns>
-        Bitmap Process(Bitmap inputImage, ImageProcessSetting setting);
+        ProcessType ProcessType { get; }
+
+        /// <summary>
+        /// 処理実行
+        /// </summary>
+        /// <param name="inputImage">入力画像</param>
+        /// <param name="outputImage">出力画像</param>
+        /// <returns>実行結果</returns>
+        ProcessExecuteResult ProcessExecute(Bitmap inputImage, out Bitmap outputImage);
     }
 }
