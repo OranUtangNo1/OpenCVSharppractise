@@ -3,27 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\imageproccessingapp\\imageprocess\\imageprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|solutionrelative:imageproccessingapp\\imageprocess\\imageprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|c:\\users\\0621\\desktop\\\u500B\u4EBA\u958B\u767A\\gittest\\opencvsharppractise\\opencvsharppractise\\imageproccessingapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\imageproccessingapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|solutionrelative:imageproccessingapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|c:\\users\\0621\\desktop\\\u500B\u4EBA\u958B\u767A\\gittest\\opencvsharppractise\\opencvsharppractise\\imageproccessingapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|solutionrelative:imageproccessingapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|c:\\users\\0621\\desktop\\\u500B\u4EBA\u958B\u767A\\gittest\\opencvsharppractise\\opencvsharppractise\\imageproccessingapp\\imageprocess\\imageprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|solutionrelative:imageproccessingapp\\imageprocess\\imageprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\imageproccessingapp\\imageprocess\\imagefilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|solutionrelative:imageproccessingapp\\imageprocess\\imagefilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|c:\\users\\0621\\desktop\\\u500B\u4EBA\u958B\u767A\\gittest\\opencvsharppractise\\opencvsharppractise\\imageproccessingapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\imageproccessingapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|solutionrelative:imageproccessingapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|c:\\users\\0621\\desktop\\\u500B\u4EBA\u958B\u767A\\gittest\\opencvsharppractise\\opencvsharppractise\\imageproccessingapp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\imageproccessingapp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF106F4A-9DE7-4B5D-9411-A3A9E773A486}|ImageProccessingApp\\ImageProccessingApp.csproj|solutionrelative:imageproccessingapp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -38,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\ImageProccessingApp\\Form1.cs",
               "RelativeDocumentMoniker": "ImageProccessingApp\\Form1.cs",
               "ToolTip": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\ImageProccessingApp\\Form1.cs",
               "RelativeToolTip": "ImageProccessingApp\\Form1.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAlwFIAAAArAAAA",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAlwGMAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T07:47:18.528Z",
               "IsPinned": true,
@@ -80,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\ImageProccessingApp\\Program.cs",
               "RelativeDocumentMoniker": "ImageProccessingApp\\Program.cs",
@@ -88,24 +84,11 @@
               "RelativeToolTip": "ImageProccessingApp\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T08:34:04.432Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T08:34:04.432Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "DocumentMoniker": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\ImageProccessingApp\\Form1.cs",
-              "RelativeDocumentMoniker": "ImageProccessingApp\\Form1.cs",
-              "ToolTip": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\ImageProccessingApp\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "RelativeToolTip": "ImageProccessingApp\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T07:41:18.593Z",
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\ImageProccessingApp\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "ImageProccessingApp\\Form1.Designer.cs",
@@ -118,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "OpenCVRapper.cs",
               "DocumentMoniker": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\ImageProccessingApp\\ImageProcess\\OpenCV\\OpenCVRapper.cs",
               "RelativeDocumentMoniker": "ImageProccessingApp\\ImageProcess\\OpenCV\\OpenCVRapper.cs",
@@ -126,12 +109,11 @@
               "RelativeToolTip": "ImageProccessingApp\\ImageProcess\\OpenCV\\OpenCVRapper.cs",
               "ViewState": "AQIAAOQAAAAAAAAAAAAYwCMBAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T02:09:53.422Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T02:09:53.422Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ImageFileManager.cs",
               "DocumentMoniker": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\ImageProccessingApp\\ImageProcess\\ImageFileManager.cs",
               "RelativeDocumentMoniker": "ImageProccessingApp\\ImageProcess\\ImageFileManager.cs",
@@ -139,18 +121,17 @@
               "RelativeToolTip": "ImageProccessingApp\\ImageProcess\\ImageFileManager.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAAwB8AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T01:35:24.146Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T01:35:24.146Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ImageProcessor.cs",
               "DocumentMoniker": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\ImageProccessingApp\\ImageProcess\\ImageProcessor.cs",
               "RelativeDocumentMoniker": "ImageProccessingApp\\ImageProcess\\ImageProcessor.cs",
               "ToolTip": "C:\\Users\\0621\\Desktop\\\u500B\u4EBA\u958B\u767A\\GitTest\\OpenCVSharppractise\\OpenCVSharpPractise\\ImageProccessingApp\\ImageProcess\\ImageProcessor.cs",
               "RelativeToolTip": "ImageProccessingApp\\ImageProcess\\ImageProcessor.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAIA3wDEAAABAAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAlwDYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T07:28:36.812Z",
               "EditorCaption": ""

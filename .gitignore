@@ -1,0 +1,10 @@
+# Visual Studio関連
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ビルド生成ファイル
+bin/
+obj/
