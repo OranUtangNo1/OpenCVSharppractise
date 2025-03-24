@@ -37,8 +37,8 @@ namespace ImageProccessingApp
                     case ProcessType.GrayScale:
                         processors.Add(new GrayScaleProcessor());
                         break;
-                    case ProcessType.Gauss:
-                        processors.Add(new GaussProcessor(this.setting.GaussianKernel));
+                    case ProcessType.Filter:
+                        processors.Add(new FilterProcessor(this.setting.Kernel,this.setting.FilterType));
                         break;
                     case ProcessType.Contrast:
                         processors.Add(new ContrastProcessor(this.setting.ContrastLevel));

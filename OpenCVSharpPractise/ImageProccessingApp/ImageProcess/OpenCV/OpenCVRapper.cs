@@ -30,13 +30,13 @@ namespace ImageProccessingApp
         }
 
         /// <summary>
-        /// ブラー処理
+        /// ガウシアンフィルタ処理
         /// </summary>
         /// <param name="inputBitmap">入力画像</param>
         /// <param name="outputBitmap">出力画像</param>
         /// <param name="kernelSize">カーネルサイズ</param>
         /// <returns>実行結果</returns>
-        public static ProcessExecuteResult GaussianBlur(Bitmap bitmap, out Bitmap outputBitmap, int kernelSize)
+        public static ProcessExecuteResult GaussianFilter(Bitmap bitmap, out Bitmap outputBitmap, int kernelSize)
         {
             outputBitmap = null;
             ProcessExecuteResult result = ProcessExecuteResult.SUCCESS;
@@ -47,6 +47,56 @@ namespace ImageProccessingApp
                 Mat blurredImage = new Mat();
                 // ガウシアンブラー
                 Cv2.GaussianBlur(mat, blurredImage, new OpenCvSharp.Size(kernelSize, kernelSize), 0);
+                return blurredImage;
+            });
+
+            result = ExecuteImageProcessing(process, bitmap, out outputBitmap);
+            return result;
+        }
+
+        /// <summary>
+        /// 移動平均フィルタ処理
+        /// </summary>
+        /// <param name="inputBitmap">入力画像</param>
+        /// <param name="outputBitmap">出力画像</param>
+        /// <param name="kernelSize">カーネルサイズ</param>
+        /// <returns>実行結果</returns>
+        public static ProcessExecuteResult MovingAverageFilter(Bitmap bitmap, out Bitmap outputBitmap, int kernelSize)
+        {
+            outputBitmap = null;
+            ProcessExecuteResult result = ProcessExecuteResult.SUCCESS;
+
+            // プロセス作成
+            Func<Mat, Mat> process = new Func<Mat, Mat>(mat =>
+            {
+                Mat blurredImage = new Mat();
+                // 移動平均ブラー
+                Cv2.Blur(mat, blurredImage, new OpenCvSharp.Size(kernelSize, kernelSize));
+                return blurredImage;
+            });
+
+            result = ExecuteImageProcessing(process, bitmap, out outputBitmap);
+            return result;
+        }
+
+        /// <summary>
+        /// メディアンフィルタ処理
+        /// </summary>
+        /// <param name="inputBitmap">入力画像</param>
+        /// <param name="outputBitmap">出力画像</param>
+        /// <param name="kernelSize">カーネルサイズ</param>
+        /// <returns>実行結果</returns>
+        public static ProcessExecuteResult MedianFilter(Bitmap bitmap, out Bitmap outputBitmap, int kernelSize)
+        {
+            outputBitmap = null;
+            ProcessExecuteResult result = ProcessExecuteResult.SUCCESS;
+
+            // プロセス作成
+            Func<Mat, Mat> process = new Func<Mat, Mat>(mat =>
+            {
+                Mat blurredImage = new Mat();
+                // メディアンブラー
+                Cv2.MedianBlur(mat, blurredImage, kernelSize);
                 return blurredImage;
             });
 
@@ -170,6 +220,28 @@ namespace ImageProccessingApp
             result = ExecuteImageProcessing(process, bitmap, out outputBitmap);
             return result;
         }
+
+        public static ProcessExecuteResult CannyEdge(Bitmap bitmap, out Bitmap outputBitmap)
+        {
+            outputBitmap = null;
+            ProcessExecuteResult result = ProcessExecuteResult.SUCCESS;
+
+            // プロセス作成
+            Func<Mat, Mat> process = new Func<Mat, Mat>(mat =>
+            {
+                Mat grayMat = new Mat();
+                Mat cannyEdgeMat = new Mat();
+                //前処理
+                //グレースケール
+                Cv2.CvtColor(mat, grayMat, ColorConversionCodes.BGR2GRAY);
+                // エッジ検出(Cannyエッジ)
+                Cv2.Canny(grayMat, cannyEdgeMat, Const.CannyThresholdMin, Const.CannyThresholdMax);
+                return cannyEdgeMat;
+            });
+            result = ExecuteImageProcessing(process, bitmap, out outputBitmap);
+            return result;
+        }
+
         #endregion process
 
         /// <summary>
