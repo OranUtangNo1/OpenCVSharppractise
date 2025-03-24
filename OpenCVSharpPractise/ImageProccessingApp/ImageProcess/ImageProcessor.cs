@@ -22,35 +22,47 @@ namespace ImageProccessingApp
     /// </summary>
     public class ImageProcessor: IImageProcessor
     {
-        private readonly List<IProcess> processors;
+        /// <summary>
+        /// プロセスリスト
+        /// </summary>
+        private readonly List<IProcess> processes;
+
+        /// <summary>
+        /// 画像処理設定
+        /// </summary>
         private readonly ImageProcessSetting setting;
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="processes">実行するプロセスリスト</param>
+        /// <param name="setting">設定値</param>
         public ImageProcessor(IEnumerable<ProcessType> processes, ImageProcessSetting setting)
         {
             this.setting = setting;
-            processors = new List<IProcess>();
+            this.processes = new List<IProcess>();
 
             foreach (var process in processes)
             {
                 switch (process)
                 {
                     case ProcessType.GrayScale:
-                        processors.Add(new GrayScaleProcessor());
+                        this.processes.Add(new GrayScaleProcessor());
                         break;
                     case ProcessType.Filter:
-                        processors.Add(new FilterProcessor(this.setting.Kernel,this.setting.FilterType));
+                        this.processes.Add(new FilterProcessor(this.setting.Kernel,this.setting.FilterType));
                         break;
                     case ProcessType.Contrast:
-                        processors.Add(new ContrastProcessor(this.setting.ContrastLevel));
+                        this.processes.Add(new ContrastProcessor(this.setting.ContrastLevel));
                         break;
                     case ProcessType.Saturation:
-                        processors.Add(new SaturationProcessor(this.setting.SaturationLevel));
+                        this.processes.Add(new SaturationProcessor(this.setting.SaturationLevel));
                         break;
                     case ProcessType.NegaPosi:
-                        processors.Add(new NegaPosiProcessor());
+                        this.processes.Add(new NegaPosiProcessor());
                         break;
                     case ProcessType.Brightness:
-                        processors.Add(new BrightnessProcessor(this.setting.BrightnessLevel));
+                        this.processes.Add(new BrightnessProcessor(this.setting.BrightnessLevel));
                         break;
                 }
             }
@@ -66,13 +78,19 @@ namespace ImageProccessingApp
         {
             ProcessExecuteResult result = ProcessExecuteResult.SUCCESS;
             outputBitmap = null;
-            if(processors.Count != 0)
+            //初回は入力画像に対して処理実行
+            var targetBitmap = inputBitmap;
+
+            if (processes.Count != 0)
             {
-                foreach (var processor in processors)
+                foreach (var processor in processes)
                 {
                     if (result == ProcessExecuteResult.SUCCESS)
                     {
-                        result = processor.ProcessExecute(inputBitmap, out outputBitmap);
+                        result = processor.ProcessExecute(targetBitmap, out outputBitmap);
+                        // ターゲット更新
+                        targetBitmap?.Dispose();
+                        targetBitmap = (Bitmap)outputBitmap?.Clone();
                     }
                     else
                     {

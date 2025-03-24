@@ -301,7 +301,7 @@ namespace ImageProccessingApp
         /// </summary>
         /// <param name="bitmap">入力</param>
         /// <returns>出力</returns>
-        public static Mat BitmapToMat(Bitmap bitmap)
+        private static Mat BitmapToMat(Bitmap bitmap)
         {
             Mat mat = OpenCvSharp.Extensions.BitmapConverter.ToMat(bitmap);
             return mat;
@@ -312,7 +312,7 @@ namespace ImageProccessingApp
         /// </summary>
         /// <param name="mat">入力</param>
         /// <returns>出力</returns>
-        public static Bitmap MatToBitmap(Mat mat)
+        private static Bitmap MatToBitmap(Mat mat)
         {
             Bitmap bitmap = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(mat);
             return bitmap;

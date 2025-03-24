@@ -100,7 +100,8 @@ namespace ImageProccessingApp
             // プロセス作成
             var processer = new ImageProcessor(targetProcesses, setting);
             // 画像処理実行
-            var result = processer.ProcessExecute(this.SelectedImage,out Bitmap bitmap);
+            var inputBitmap_tmp = new Bitmap(this.SelectedImage);
+            var result = processer.ProcessExecute(inputBitmap_tmp,out Bitmap bitmap);
             // 全ての処理に成功している場合のみ、処理済み画像エリア更新
             if(result == ProcessExecuteResult.SUCCESS)
             {
@@ -138,7 +139,7 @@ namespace ImageProccessingApp
         /// </summary>
         /// <param name="sender">発行元情報</param>
         /// <param name="e">イベント情報</param>
-        private void btn_Save_Click(object sender, EventArgs e)
+        private void Btn_Save_Click(object sender, EventArgs e)
         {
             ImageFileManager.ImageFileSave(this.ProcessedImage);
         }
