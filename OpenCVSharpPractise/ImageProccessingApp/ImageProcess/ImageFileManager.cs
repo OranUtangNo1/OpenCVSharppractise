@@ -34,6 +34,12 @@ namespace ImageProccessingApp
             var filePath = String.Empty;
             // ファイル選択
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            // カレントディレクトリをbinフォルダの親フォルダまでさかのぼる
+            var iniPath  = ImageFileManager.ExtractBinPath(Directory.GetCurrentDirectory());
+            if (!string.IsNullOrEmpty(iniPath))
+            {
+                openFileDialog.InitialDirectory = iniPath;
+            }
             openFileDialog.Filter = CreateFileFilter(new FileFilter[] { FileFilter.png, FileFilter.bmp, FileFilter.jpg });
             var result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK)
@@ -44,6 +50,11 @@ namespace ImageProccessingApp
             return filePath;
         }
 
+        /// <summary>
+        /// 画像保存
+        /// </summary>
+        /// <param name="saveImage">保存画像</param>
+        /// <returns>実行結果</returns>
         public static bool ImageFileSave(Bitmap saveImage)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -103,6 +114,28 @@ namespace ImageProccessingApp
             var filterString = string.Join("", extentions);
 
             return $"{FileFilterHeader}|{filterString}";
+        }
+
+        /// <summary>
+        /// 文字列から\\binを見つけ、その後ろの部分を取得するメソッド
+        /// </summary>
+        /// <param name="path">検索対象のパス</param>
+        /// <returns>\\bin以降の文字列</returns>
+        static string ExtractBinPath(string path)
+        {
+            // "\\bin" の位置を探す
+            int binIndex = path.IndexOf(@"\bin");
+
+            // 見つかった場合、それより前の部分を抽出
+            if (binIndex >= 0)
+            {
+                return path.Substring(0, binIndex);
+            }
+            else
+            {
+                // "\\bin" が見つからなければ、元のパスをそのまま返す
+                return path;
+            }
         }
     }
 }

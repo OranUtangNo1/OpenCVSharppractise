@@ -10,10 +10,13 @@
         /// </summary>
         public ProcessType ProcessType { get; } = ProcessType.Filter;
 
+        /// <summary>
+        /// フィルタ種別
+        /// </summary>
         public FilterType FilterType { get; } = FilterType.Gaussian;
 
         /// <summary>
-        /// 設定値
+        ///カーネルサイズ
         /// </summary>
         public int Kernel { get; set; } = 3;
 

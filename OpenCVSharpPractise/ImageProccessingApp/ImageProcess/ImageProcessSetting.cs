@@ -2,7 +2,6 @@
 {
     public class ImageProcessSetting
     {
-     
         /// <summary>
         /// コントラスト設定値
         /// </summary>
@@ -18,14 +17,14 @@
         /// </summary>
         public int BrightnessLevel { get; set; } = 25;
 
-
         /// <summary>
-        /// フィルタ処理設定値
+        /// カーネルサイズ
         /// </summary>
         public int Kernel { get; set; } = 3;
 
+        /// <summary>
+        /// フィルタ種別
+        /// </summary>
         public FilterType FilterType { get; set; }
-
-
     }
 }

@@ -92,12 +92,12 @@
             btn_Save.TabIndex = 3;
             btn_Save.Text = "Save";
             btn_Save.UseVisualStyleBackColor = false;
-            btn_Save.Click += btn_Save_Click;
+            btn_Save.Click += Btn_Save_Click;
             // 
             // ChkBox_Contrast
             // 
             ChkBox_Contrast.AutoSize = true;
-            ChkBox_Contrast.Location = new Point(33, 545);
+            ChkBox_Contrast.Location = new Point(33, 527);
             ChkBox_Contrast.Name = "ChkBox_Contrast";
             ChkBox_Contrast.Size = new Size(70, 19);
             ChkBox_Contrast.TabIndex = 4;
@@ -117,7 +117,7 @@
             // ChkBox_Saturation
             // 
             ChkBox_Saturation.AutoSize = true;
-            ChkBox_Saturation.Location = new Point(33, 631);
+            ChkBox_Saturation.Location = new Point(33, 613);
             ChkBox_Saturation.Name = "ChkBox_Saturation";
             ChkBox_Saturation.Size = new Size(80, 19);
             ChkBox_Saturation.TabIndex = 6;
@@ -127,7 +127,7 @@
             // ScBar_Contrast
             // 
             ScBar_Contrast.LargeChange = 5;
-            ScBar_Contrast.Location = new Point(151, 545);
+            ScBar_Contrast.Location = new Point(151, 527);
             ScBar_Contrast.Maximum = 50;
             ScBar_Contrast.Minimum = 1;
             ScBar_Contrast.Name = "ScBar_Contrast";
@@ -138,7 +138,7 @@
             // ScBar_Saturation
             // 
             ScBar_Saturation.LargeChange = 5;
-            ScBar_Saturation.Location = new Point(151, 631);
+            ScBar_Saturation.Location = new Point(151, 613);
             ScBar_Saturation.Maximum = 50;
             ScBar_Saturation.Minimum = 1;
             ScBar_Saturation.Name = "ScBar_Saturation";
@@ -149,7 +149,7 @@
             // Btn_ProcessImage
             // 
             Btn_ProcessImage.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            Btn_ProcessImage.Location = new Point(609, 607);
+            Btn_ProcessImage.Location = new Point(609, 574);
             Btn_ProcessImage.Name = "Btn_ProcessImage";
             Btn_ProcessImage.Size = new Size(130, 61);
             Btn_ProcessImage.TabIndex = 10;
@@ -171,7 +171,7 @@
             // ChkBox_Filter
             // 
             ChkBox_Filter.AutoSize = true;
-            ChkBox_Filter.Location = new Point(33, 461);
+            ChkBox_Filter.Location = new Point(168, 426);
             ChkBox_Filter.Name = "ChkBox_Filter";
             ChkBox_Filter.Size = new Size(52, 19);
             ChkBox_Filter.TabIndex = 12;
@@ -181,7 +181,7 @@
             // ScBar_Filter
             // 
             ScBar_Filter.LargeChange = 1;
-            ScBar_Filter.Location = new Point(151, 461);
+            ScBar_Filter.Location = new Point(223, 426);
             ScBar_Filter.Maximum = 3;
             ScBar_Filter.Minimum = 1;
             ScBar_Filter.Name = "ScBar_Filter";
@@ -192,7 +192,7 @@
             // ScBar_Brightness
             // 
             ScBar_Brightness.LargeChange = 5;
-            ScBar_Brightness.Location = new Point(151, 587);
+            ScBar_Brightness.Location = new Point(151, 569);
             ScBar_Brightness.Maximum = 50;
             ScBar_Brightness.Minimum = 1;
             ScBar_Brightness.Name = "ScBar_Brightness";
@@ -203,7 +203,7 @@
             // ChkBox_Brightness
             // 
             ChkBox_Brightness.AutoSize = true;
-            ChkBox_Brightness.Location = new Point(33, 587);
+            ChkBox_Brightness.Location = new Point(33, 569);
             ChkBox_Brightness.Name = "ChkBox_Brightness";
             ChkBox_Brightness.Size = new Size(81, 19);
             ChkBox_Brightness.TabIndex = 14;
@@ -213,7 +213,7 @@
             // ChkBox_NegaPosi
             // 
             ChkBox_NegaPosi.AutoSize = true;
-            ChkBox_NegaPosi.Location = new Point(151, 426);
+            ChkBox_NegaPosi.Location = new Point(33, 462);
             ChkBox_NegaPosi.Name = "ChkBox_NegaPosi";
             ChkBox_NegaPosi.Size = new Size(76, 19);
             ChkBox_NegaPosi.TabIndex = 16;
@@ -226,7 +226,7 @@
             panel1.Controls.Add(radio_MovingAverage);
             panel1.Controls.Add(radio_Median);
             panel1.Controls.Add(radio_Gauss);
-            panel1.Location = new Point(44, 480);
+            panel1.Location = new Point(179, 445);
             panel1.Name = "panel1";
             panel1.Size = new Size(125, 56);
             panel1.TabIndex = 17;
@@ -271,7 +271,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(849, 739);
+            ClientSize = new Size(759, 655);
             Controls.Add(panel1);
             Controls.Add(ChkBox_NegaPosi);
             Controls.Add(ScBar_Brightness);

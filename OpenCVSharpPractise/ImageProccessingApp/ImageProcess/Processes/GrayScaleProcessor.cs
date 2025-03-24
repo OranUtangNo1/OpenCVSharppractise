@@ -12,6 +12,9 @@ namespace ImageProccessingApp.Processes
     /// </summary>
     public class GrayScaleProcessor : IProcess
     {
+        /// <summary>
+        /// プロセス種別
+        /// </summary>
         public ProcessType ProcessType { get; } = ProcessType.GrayScale;
 
         /// <summary>
